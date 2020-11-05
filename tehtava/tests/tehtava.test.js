@@ -4,15 +4,17 @@ global.console = {
 }
 
 describe('Tarkistetaan console.login sisältö', () => {
-  it('pitäisi sisältää Nyt koodataan -teksti', () => {
+  it('pitäisi sisältää "XXX paivaa"', () => {
     
     const tehtava = require('../tehtava.js');
 
     tehtava();
 
-    expect(global.console.log).toHaveBeenCalledWith(
-      'Nyt koodataan!'
-    )
+    let pvjakaja = 1000*3600*24;
+    let ms = new Date(2021,6,1,0,0,0,0) - Date.now();
+    let k = Math.round(ms/pvjakaja);
+    let vert = k + " paivaa";
+    expect(global.console.log).toHaveBeenCalledWith(vert)
   });
 });
 
