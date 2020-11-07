@@ -11,7 +11,7 @@ describe('Tarkistetaan console.login sisältö', () => {
     tehtava();
 
     let pvjakaja = 1000*3600*24;
-    let ms = new Date(2021,6,1,0,0,0,0) - Date.now();
+    let ms = new Date(2021,5,1,0,0,0,0) - Date.now();
     let k = Math.round(ms/pvjakaja);
     let vert = k + " paivaa";
     expect(global.console.log).toHaveBeenCalledWith(vert)
